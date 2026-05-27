@@ -5,7 +5,7 @@ _Update this file at the end of every meaningful work block._
 ---
 
 ## Current phase
-**Phase 6 — Final Audit** (linting ✅ · browser testing ✅ · tweaks pending)
+**Phase 6 — Final Audit** (linting ✅ · browser testing ✅ · Lighthouse ✅)
 
 ## What was just completed (2026-05-27)
 Full build across all six phases. User tested in browser and confirmed everything works. Starting next session to address questions and visual tweaks.
@@ -50,4 +50,4 @@ npx serve .   # http://localhost:3000
 - ~~Phase 3: Menu JS~~ ✓
 - ~~Phase 4: Reservation JS~~ ✓
 - ~~Phase 5: Pre-commit tooling~~ ✓
-- **Phase 6: Final audit** — lint ✅, browser test ✅, Lighthouse audit + Lighthouse contrast check TBD
+- **Phase 6: Final audit** — lint ✅, browser test ✅, Lighthouse ✅ (Perf 99 · A11y 100 · BP 100 · SEO 100)

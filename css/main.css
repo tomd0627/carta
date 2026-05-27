@@ -133,6 +133,10 @@ address {
   font-style: normal;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* ─── Focus indicators ───────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--c-accent);
@@ -283,7 +287,7 @@ address {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-block-size: 100dvh;
+  min-block-size: calc(100dvh - var(--header-height));
   padding-block: var(--space-6xl);
   position: relative;
   text-align: center;
@@ -516,7 +520,7 @@ address {
   color: var(--c-muted-on-dark);
   font-size: var(--fs-xs);
   letter-spacing: 0.04em;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .footer-nav {
@@ -529,7 +533,7 @@ address {
   color: var(--c-muted-on-dark);
   font-size: var(--fs-xs);
   letter-spacing: 0.08em;
-  opacity: 0.7;
+  opacity: 0.8;
   text-transform: uppercase;
   transition: opacity var(--t-fast);
 }

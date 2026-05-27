@@ -58,11 +58,12 @@
   border-radius: 50%;
   color: var(--c-muted);
   display: flex;
-  font-family: var(--ff-heading);
-  font-size: var(--fs-lg);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
   font-weight: 400;
   inline-size: 2.5rem;
   justify-content: center;
+  line-height: 1;
   transition:
     background-color var(--t-base),
     border-color var(--t-base),
@@ -275,10 +276,9 @@
 
 /* ─── Time Slots ─────────────────────────────────────────────────────── */
 .time-slots {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: var(--space-sm);
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
   padding-block: var(--space-md);
 }
 
@@ -335,6 +335,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  grid-column: 1 / -1;
   padding-block: var(--space-3xl);
   text-align: center;
 }
@@ -499,6 +500,12 @@
   .time-slot-btn {
     min-inline-size: 7rem;
   }
+
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -514,5 +521,15 @@
 
   .step-label {
     display: none;
+  }
+
+  .step-nav {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  #btn-back,
+  #btn-next {
+    justify-content: center;
   }
 }

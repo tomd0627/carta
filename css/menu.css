@@ -13,10 +13,11 @@
 .filter-bar {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--space-sm);
-  justify-content: center;
   margin-block-end: var(--space-2xl);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
 }
 
 .filter-label {
@@ -46,6 +47,7 @@
     background-color var(--t-fast),
     border-color var(--t-fast),
     color var(--t-fast);
+  white-space: nowrap;
 }
 
 .filter-btn:hover,
@@ -79,7 +81,7 @@
   align-items: center;
   display: flex;
   gap: 0;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .menu-nav-link {
@@ -192,9 +194,7 @@
 }
 
 .menu-card.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.97);
+  display: none;
 }
 
 .menu-card-name {
@@ -209,7 +209,7 @@
 }
 
 .menu-card-price {
-  color: var(--c-accent);
+  color: var(--c-text);
   font-family: var(--ff-body);
   font-size: var(--fs-lg);
   font-weight: 500;

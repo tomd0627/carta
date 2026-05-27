@@ -1,0 +1,518 @@
+/* =====================================================================
+   CARTA — reservation.css
+   Reservation section, progress steps, step panels, form fields
+   ===================================================================== */
+
+/* ─── Reservation Section ────────────────────────────────────────────── */
+.reservation-section {
+  background-color: var(--c-bg);
+}
+
+.reservation-shell {
+  background-color: var(--c-surface);
+  background-image: var(--c-noise);
+  border-radius: var(--radius-md);
+  margin-block-start: var(--space-2xl);
+  padding: var(--space-3xl) var(--space-2xl);
+}
+
+/* ─── Progress Steps ─────────────────────────────────────────────────── */
+.progress-steps {
+  align-items: flex-start;
+  counter-reset: none;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  margin-block-end: var(--space-3xl);
+  position: relative;
+}
+
+/* Connecting line between steps */
+.progress-steps::before {
+  background-color: var(--c-border);
+  block-size: 1px;
+  content: '';
+  inset-block-start: 1.25rem;
+  inset-inline: 10%;
+  position: absolute;
+  z-index: 0;
+}
+
+.progress-step {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-inline-size: 6rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.step-num {
+  align-items: center;
+  background-color: var(--c-surface-alt);
+  block-size: 2.5rem;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--c-muted);
+  display: flex;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  inline-size: 2.5rem;
+  justify-content: center;
+  transition:
+    background-color var(--t-base),
+    border-color var(--t-base),
+    color var(--t-base);
+}
+
+.step-label {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--t-base);
+}
+
+/* Active step */
+.progress-step[aria-current='step'] .step-num {
+  background-color: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-text);
+}
+
+.progress-step[aria-current='step'] .step-label {
+  color: var(--c-text);
+}
+
+/* Completed step */
+.progress-step[data-complete='true'] .step-num {
+  background-color: var(--c-text);
+  border-color: var(--c-text);
+  color: var(--c-surface);
+  font-size: 0;
+  position: relative;
+}
+
+.progress-step[data-complete='true'] .step-num::after {
+  block-size: 0.65rem;
+  border-block-end: 2px solid currentcolor;
+  border-inline-end: 2px solid currentcolor;
+  color: var(--c-surface);
+  content: '';
+  inline-size: 0.4rem;
+  position: absolute;
+  transform: rotate(45deg) translate(-1px, -2px);
+}
+
+.progress-step[data-complete='true'] .step-label {
+  color: var(--c-muted);
+}
+
+/* ─── Step Panels ────────────────────────────────────────────────────── */
+.step-panel {
+  animation: step-in var(--t-base) ease both;
+  margin-block-end: var(--space-2xl);
+  min-block-size: 14rem;
+}
+
+.step-panel[hidden] {
+  display: none;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-title {
+  color: var(--c-text);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-style: italic;
+  font-weight: 300;
+  margin-block-end: var(--space-xl);
+  text-align: center;
+}
+
+.step-hint {
+  color: var(--c-muted);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  margin-block-start: var(--space-md);
+  text-align: center;
+}
+
+.step-link {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── Stepper Control ────────────────────────────────────────────────── */
+.stepper {
+  align-items: center;
+  display: flex;
+  gap: var(--space-xl);
+  justify-content: center;
+}
+
+.stepper-btn {
+  align-items: center;
+  background-color: transparent;
+  block-size: 3.25rem;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--c-text);
+  display: flex;
+  font-size: 1.4rem;
+  inline-size: 3.25rem;
+  justify-content: center;
+  transition:
+    background-color var(--t-fast),
+    border-color var(--t-fast);
+}
+
+.stepper-btn:hover {
+  background-color: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-text);
+}
+
+.stepper-btn:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.stepper-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.stepper-value {
+  color: var(--c-text);
+  font-family: var(--ff-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  min-inline-size: 3ch;
+  text-align: center;
+}
+
+/* ─── Date Field ─────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+
+.field-label {
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.field-required {
+  color: var(--c-accent);
+  margin-inline-start: 2px;
+}
+
+.field-optional {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+}
+
+.field-input {
+  appearance: none;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  color: var(--c-text);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  outline: none;
+  padding-block: var(--space-md);
+  padding-inline: var(--space-lg);
+  transition:
+    border-color var(--t-fast),
+    box-shadow var(--t-fast);
+}
+
+.field-input:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgb(200 146 42 / 15%);
+}
+
+.field-input[aria-invalid='true'] {
+  border-color: var(--c-error);
+  box-shadow: 0 0 0 3px rgb(192 57 43 / 10%);
+}
+
+.field-textarea {
+  min-block-size: 6rem;
+  resize: vertical;
+}
+
+.field-error {
+  color: var(--c-error);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  min-block-size: 1.2em;
+}
+
+/* ─── Time Slots ─────────────────────────────────────────────────────── */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  padding-block: var(--space-md);
+}
+
+.time-slot-btn {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  color: var(--c-text);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: 400;
+  min-block-size: 3rem;
+  min-inline-size: 6rem;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-lg);
+  transition:
+    background-color var(--t-fast),
+    border-color var(--t-fast),
+    color var(--t-fast),
+    opacity var(--t-fast);
+}
+
+.time-slot-btn:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.time-slot-btn--unavailable,
+.time-slot-btn:disabled,
+.time-slot-btn[aria-disabled='true'] {
+  color: var(--c-muted);
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+  text-decoration: line-through;
+}
+
+.time-slot-btn:hover:not(:disabled, [aria-disabled='true']) {
+  background-color: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-text);
+}
+
+.time-slot-btn--selected,
+.time-slot-btn[aria-pressed='true'] {
+  background-color: var(--c-text);
+  border-color: var(--c-text);
+  color: var(--c-surface);
+}
+
+.slots-empty {
+  align-items: center;
+  color: var(--c-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-block: var(--space-3xl);
+  text-align: center;
+}
+
+.slots-empty-icon {
+  color: var(--c-muted);
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.slots-empty-msg {
+  font-size: var(--fs-base);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.slots-empty-hint {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+}
+
+/* ─── Step Navigation ────────────────────────────────────────────────── */
+.step-nav {
+  align-items: center;
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-block-start: var(--space-xl);
+}
+
+#btn-back.btn-ghost {
+  border-color: var(--c-border);
+  color: var(--c-muted);
+}
+
+#btn-back.btn-ghost:hover {
+  border-color: var(--c-muted);
+  color: var(--c-text);
+}
+
+/* ─── Confirmation ───────────────────────────────────────────────────── */
+.confirmation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl);
+  text-align: center;
+}
+
+.confirmation-icon {
+  color: var(--c-accent);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.confirmation-title {
+  color: var(--c-text);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.confirmation-sub {
+  color: var(--c-muted);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  margin-block-end: var(--space-md);
+}
+
+.confirmation-card {
+  background-color: var(--c-surface-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  inline-size: 100%;
+  max-inline-size: 30rem;
+  padding: var(--space-xl);
+  text-align: start;
+}
+
+.confirmation-row {
+  align-items: baseline;
+  border-block-end: 1px solid var(--c-border);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+  padding-block: var(--space-sm);
+}
+
+.confirmation-row:last-child {
+  border-block-end: none;
+}
+
+.confirmation-label {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.confirmation-value {
+  color: var(--c-text);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  text-align: end;
+}
+
+.confirmation-requests {
+  color: var(--c-muted);
+  font-size: var(--fs-sm);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.btn-print {
+  border-color: var(--c-border);
+  color: var(--c-muted);
+  margin-block-start: var(--space-md);
+}
+
+.btn-print:hover {
+  background-color: transparent;
+  border-color: var(--c-text);
+  color: var(--c-text);
+}
+
+/* ─── Submit Error Banner ────────────────────────────────────────────── */
+.submit-error {
+  align-items: center;
+  background-color: rgb(192 57 43 / 8%);
+  border: 1px solid rgb(192 57 43 / 30%);
+  border-radius: var(--radius-md);
+  color: var(--c-error);
+  display: flex;
+  font-size: var(--fs-sm);
+  gap: var(--space-md);
+  margin-block-start: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.submit-error[hidden] {
+  display: none;
+}
+
+.submit-error i {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+
+.submit-error span {
+  flex: 1;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .reservation-shell {
+    padding: var(--space-4xl) var(--space-4xl);
+  }
+
+  .time-slot-btn {
+    min-inline-size: 7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation-shell {
+    border-radius: 0;
+    margin-inline: calc(var(--space-xl) * -1);
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .progress-steps::before {
+    display: none;
+  }
+
+  .step-label {
+    display: none;
+  }
+}

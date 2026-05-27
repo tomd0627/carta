@@ -1,0 +1,101 @@
+/* =====================================================================
+   CARTA — print.css
+   Confirmation-screen print styles
+   ===================================================================== */
+
+@media print {
+  /* ─── Show only the confirmation screen ─────────────────────────── */
+  .skip-link,
+  .site-header,
+  #hero,
+  #menu,
+  #reservations .section-header,
+  .progress-steps,
+  .step-panel:not(#step-5),
+  .step-nav,
+  .submit-error,
+  .btn-print,
+  #info,
+  .site-footer {
+    display: none;
+  }
+
+  /* ─── Reset page chrome ──────────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html,
+  body {
+    background-color: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+
+  /* ─── Confirmation card ──────────────────────────────────────────── */
+  #step-5 {
+    display: block;
+    padding: 0;
+  }
+
+  .confirmation {
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0;
+    text-align: left;
+  }
+
+  .confirmation-icon {
+    color: #000;
+    font-size: 2rem;
+  }
+
+  .confirmation-title {
+    color: #000;
+    font-size: 22pt;
+  }
+
+  .confirmation-sub {
+    color: #333;
+    font-size: 11pt;
+  }
+
+  .confirmation-card {
+    background-color: #f9f7f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-inline-size: 100%;
+    padding: 1.5rem;
+    page-break-inside: avoid;
+  }
+
+  .confirmation-row {
+    border-block-end: 1px solid #ddd;
+    padding-block: 0.5rem;
+  }
+
+  .confirmation-label {
+    color: #666;
+    font-size: 8pt;
+  }
+
+  .confirmation-value {
+    color: #000;
+    font-size: 13pt;
+  }
+
+  /* ─── Print header ───────────────────────────────────────────────── */
+  @page {
+    margin: 2cm;
+  }
+
+  .reservation-section,
+  .reservation-shell {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+}

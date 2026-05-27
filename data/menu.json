@@ -1,0 +1,230 @@
+{
+  "sections": [
+    {
+      "id": "starters",
+      "label": "Starters",
+      "items": [
+        {
+          "id": "burrata",
+          "name": "Burrata & Heritage Tomato",
+          "description": "Hand-pulled burrata, vine-ripened heritage tomatoes, aged balsamic reduction, basil oil, Maldon sea salt",
+          "price": 18,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "scallop",
+          "name": "Seared Diver Scallop",
+          "description": "Pan-seared Isle of Skye scallop, cauliflower purée, celeriac rémoulade, golden raisin emulsion, micro cress",
+          "price": 26,
+          "tags": ["GF"]
+        },
+        {
+          "id": "pate",
+          "name": "Country Pâté en Croûte",
+          "description": "House-made pork and pistachio pâté wrapped in golden pastry, cornichons, Dijon mustard, sourdough toasts",
+          "price": 22,
+          "tags": []
+        },
+        {
+          "id": "veloute",
+          "name": "Wild Mushroom Velouté",
+          "description": "Forest mushroom velouté, truffle oil, crispy shallots, chive oil, crème fraîche swirl",
+          "price": 16,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "tartare",
+          "name": "Yellowfin Tuna Tartare",
+          "description": "Soy-cured yellowfin tuna, avocado cream, pickled cucumber, ponzu dressing, sesame and nori tuile",
+          "price": 28,
+          "tags": ["GF", "DF", "NF"]
+        },
+        {
+          "id": "truffle-egg",
+          "name": "Burford Brown Egg & Black Truffle",
+          "description": "Soft-set Burford Brown hen's egg, shaved Périgord black truffle, buttered brioche soldiers, chive butter",
+          "price": 24,
+          "tags": ["V", "GF"]
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "label": "Mains",
+      "items": [
+        {
+          "id": "cote-de-boeuf",
+          "name": "Dry-Aged Côte de Bœuf",
+          "description": "35-day dry-aged prime rib on the bone to share, bone marrow butter, watercress, triple-cooked chips — served for two (price per person)",
+          "price": 54,
+          "tags": ["GF"]
+        },
+        {
+          "id": "halibut",
+          "name": "Line-Caught Halibut",
+          "description": "Pan-roasted Cornish halibut, crab bisque, samphire, coastal herbs, warm saffron butter sauce",
+          "price": 42,
+          "tags": ["GF", "DF"]
+        },
+        {
+          "id": "lamb",
+          "name": "Rack of Cornish Lamb",
+          "description": "Herb-crusted rack of Cornish lamb, fondant potato, purple sprouting broccoli, rosemary and red wine jus",
+          "price": 46,
+          "tags": ["GF"]
+        },
+        {
+          "id": "risotto",
+          "name": "Wild Mushroom Risotto",
+          "description": "Carnaroli risotto, mixed wild mushrooms, Parmigiano-Reggiano, aged balsamic, micro herbs, truffle oil",
+          "price": 34,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "duck",
+          "name": "Duck Confit & Cherry Jus",
+          "description": "Slow-cooked Gressingham duck leg, Puy lentils, roasted golden beetroot, Morello cherry and port jus",
+          "price": 38,
+          "tags": ["GF", "DF"]
+        },
+        {
+          "id": "pappardelle",
+          "name": "Handmade Pappardelle",
+          "description": "Egg pappardelle, slow-braised rabbit ragù bianco, white wine, sage brown butter, aged Pecorino Romano",
+          "price": 32,
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "label": "Sides",
+      "items": [
+        {
+          "id": "mash",
+          "name": "Truffle Pomme Purée",
+          "description": "Robuchon-style potato purée, white truffle oil, unsalted Normandy butter",
+          "price": 9,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "carrots",
+          "name": "Heritage Carrots & Brown Butter",
+          "description": "Rainbow heritage carrots, nutmeg brown butter, toasted hazelnuts, wildflower honey glaze",
+          "price": 8,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "spinach",
+          "name": "Wilted Spinach & Aged Balsamic",
+          "description": "Baby leaf spinach, garlic, 25-year aged balsamic, Sicilian extra virgin olive oil",
+          "price": 7,
+          "tags": ["VG", "GF", "DF"]
+        },
+        {
+          "id": "gratin",
+          "name": "Gruyère & Herb Gratin",
+          "description": "Dauphinoise-style potato gratin, mature Comté, fresh thyme, double cream",
+          "price": 9,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "chips",
+          "name": "Hand-Cut Triple Chips",
+          "description": "Maris Piper triple-cooked chips, fleur de sel, optional truffle oil",
+          "price": 8,
+          "tags": ["VG", "GF", "DF", "NF"]
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "label": "Desserts",
+      "items": [
+        {
+          "id": "fondant",
+          "name": "Valrhona Chocolate Fondant",
+          "description": "Warm Guanaja 70% fondant, salted caramel sauce, Tahitian vanilla Chantilly, bitter cocoa sablé",
+          "price": 14,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "millefeuille",
+          "name": "Tonka Bean Mille-Feuille",
+          "description": "Caramelised rough-puff pastry, tonka bean crème pâtissière, Gariguette strawberries, strawberry coulis",
+          "price": 13,
+          "tags": ["V"]
+        },
+        {
+          "id": "cheese",
+          "name": "Artisan British Cheese",
+          "description": "Selection of three British cheeses from Neal's Yard, Eccles cake, membrillo, walnuts, Granny Smith apple",
+          "price": 18,
+          "tags": ["V", "GF"]
+        },
+        {
+          "id": "sorbet",
+          "name": "Seasonal Sorbet",
+          "description": "Three scoops of house-churned seasonal sorbet, fresh mint, citrus zest. Ask your server for today's flavours",
+          "price": 11,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "creme-brulee",
+          "name": "Classic Crème Brûlée",
+          "description": "Madagascan vanilla custard, caramelised sugar crust, sablé Breton, seasonal berries",
+          "price": 12,
+          "tags": ["V", "GF"]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "label": "Drinks",
+      "items": [
+        {
+          "id": "wine-pairing",
+          "name": "Sommelier's Wine Pairing",
+          "description": "Five-course wine pairing curated by our head sommelier to complement each course of the evening",
+          "price": 65,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "champagne",
+          "name": "Billecart-Salmon Champagne",
+          "description": "Billecart-Salmon Brut Réserve NV, chilled — a house favourite since opening",
+          "price": 18,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "negroni",
+          "name": "Classic Negroni",
+          "description": "Tanqueray London Dry, Campari, Martini Rosso, flamed orange peel",
+          "price": 16,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "elderflower",
+          "name": "Elderflower Pressé",
+          "description": "Belvoir elderflower pressé with sparkling water, fresh mint, lemon",
+          "price": 6,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "water-still",
+          "name": "Still Water",
+          "description": "Hildon natural mineral water, 750 ml",
+          "price": 5,
+          "tags": ["VG", "GF", "DF", "NF"]
+        },
+        {
+          "id": "espresso",
+          "name": "Espresso & Petit Fours",
+          "description": "Single-origin espresso, double or lungo, served with our nightly selection of house petit fours",
+          "price": 8,
+          "tags": ["V", "GF", "DF", "NF"]
+        }
+      ]
+    }
+  ]
+}

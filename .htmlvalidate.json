@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "doctype-style": ["error", { "style": "lowercase" }],
+    "require-sri": "off",
+    "void-style": ["error", { "style": "selfclosing" }]
+  }
+}

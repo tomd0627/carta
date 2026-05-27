@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Carta — Contemporary fine dining in Covent Garden. Reserve your table online."
+    />
+    <title>Carta — Fine Dining</title>
+
+    <!-- Preconnect for web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Cormorant Garamond + DM Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons (thin weight) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/thin/style.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <!-- Skip to main content -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Site header -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <a class="header-wordmark" href="#hero" aria-label="Carta — home">Carta</a>
+        <nav class="header-nav" aria-label="Main navigation">
+          <ul class="header-nav-list" role="list">
+            <li><a href="#menu" class="header-nav-link">Menu</a></li>
+            <li><a href="#reservations" class="header-nav-link">Reserve</a></li>
+            <li><a href="#info" class="header-nav-link">Visit</a></li>
+          </ul>
+        </nav>
+        <a href="#reservations" class="btn btn-primary btn-sm header-cta">Reserve</a>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main" tabindex="-1">
+      <!-- ═══════════════════════════════════════════ HERO -->
+      <section id="hero" class="hero" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+          <p class="hero-eyebrow">Contemporary Fine Dining</p>
+          <h1 id="hero-heading" class="hero-title">Carta</h1>
+          <div class="hero-rule" aria-hidden="true"></div>
+          <p class="hero-tagline">Where the season speaks and the table listens.</p>
+          <div class="hero-ctas">
+            <a href="#reservations" class="btn btn-primary">Reserve a Table</a>
+            <a href="#menu" class="btn btn-ghost">View the Menu</a>
+          </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <i class="ph-thin ph-arrow-down"></i>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ MENU -->
+      <section id="menu" class="menu-section" aria-labelledby="menu-heading">
+        <div class="section-inner">
+          <header class="section-header">
+            <h2 id="menu-heading" class="section-title">The Menu</h2>
+            <p class="section-sub">
+              Seasonal produce, honest craft. Menu changes with the harvest.
+            </p>
+          </header>
+
+          <!-- Dietary filter bar -->
+          <div class="filter-bar" role="group" aria-label="Filter by dietary preference">
+            <span class="filter-label" aria-hidden="true">Filter:</span>
+            <button
+              class="filter-btn filter-btn--active"
+              data-filter="all"
+              aria-pressed="true"
+              type="button"
+            >
+              All
+            </button>
+            <button class="filter-btn" data-filter="GF" aria-pressed="false" type="button">
+              Gluten-Free
+            </button>
+            <button class="filter-btn" data-filter="V" aria-pressed="false" type="button">
+              Vegetarian
+            </button>
+            <button class="filter-btn" data-filter="VG" aria-pressed="false" type="button">
+              Vegan
+            </button>
+            <button class="filter-btn" data-filter="DF" aria-pressed="false" type="button">
+              Dairy-Free
+            </button>
+            <button class="filter-btn" data-filter="NF" aria-pressed="false" type="button">
+              Nut-Free
+            </button>
+          </div>
+
+          <!-- Sticky section navigation -->
+          <nav class="menu-section-nav" aria-label="Menu sections" id="menu-section-nav">
+            <ul class="menu-nav-list" role="list">
+              <li>
+                <a href="#section-starters" class="menu-nav-link" data-section="starters">
+                  Starters
+                </a>
+              </li>
+              <li>
+                <a href="#section-mains" class="menu-nav-link" data-section="mains"> Mains </a>
+              </li>
+              <li>
+                <a href="#section-sides" class="menu-nav-link" data-section="sides"> Sides </a>
+              </li>
+              <li>
+                <a href="#section-desserts" class="menu-nav-link" data-section="desserts">
+                  Desserts
+                </a>
+              </li>
+              <li>
+                <a href="#section-drinks" class="menu-nav-link" data-section="drinks"> Drinks </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Menu grid — populated by menu.js -->
+          <div id="menu-grid" class="menu-grid" aria-live="polite" aria-label="Menu items">
+            <p class="menu-loading" aria-live="polite">Loading menu…</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ RESERVATIONS -->
+      <section id="reservations" class="reservation-section" aria-labelledby="reservation-heading">
+        <div class="section-inner">
+          <header class="section-header section-header--on-dark">
+            <h2 id="reservation-heading" class="section-title section-title--on-dark">
+              Reserve a Table
+            </h2>
+            <p class="section-sub section-sub--on-dark">We look forward to welcoming you.</p>
+          </header>
+
+          <div class="reservation-shell">
+            <!-- Progress indicator -->
+            <ol class="progress-steps" aria-label="Reservation steps">
+              <li class="progress-step" data-step="1" aria-current="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <span class="step-label">Party</span>
+              </li>
+              <li class="progress-step" data-step="2">
+                <span class="step-num" aria-hidden="true">2</span>
+                <span class="step-label">Date</span>
+              </li>
+              <li class="progress-step" data-step="3">
+                <span class="step-num" aria-hidden="true">3</span>
+                <span class="step-label">Time</span>
+              </li>
+              <li class="progress-step" data-step="4">
+                <span class="step-num" aria-hidden="true">4</span>
+                <span class="step-label">Details</span>
+              </li>
+              <li class="progress-step" data-step="5">
+                <span class="step-num" aria-hidden="true">5</span>
+                <span class="step-label">Confirm</span>
+              </li>
+            </ol>
+
+            <!-- ─── Step 1: Party Size ─── -->
+            <div class="step-panel" id="step-1" data-step="1">
+              <h3 class="step-title">How many guests?</h3>
+              <div class="stepper" role="group" aria-label="Party size stepper">
+                <button
+                  class="stepper-btn"
+                  id="party-dec"
+                  aria-label="Decrease party size"
+                  type="button"
+                >
+                  <i class="ph-thin ph-minus" aria-hidden="true"></i>
+                </button>
+                <output class="stepper-value" id="party-value" for="party-dec party-inc">2</output>
+                <button
+                  class="stepper-btn"
+                  id="party-inc"
+                  aria-label="Increase party size"
+                  type="button"
+                >
+                  <i class="ph-thin ph-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p class="step-hint">
+                Booking for 1–12 guests. For larger parties,
+                <a href="#info" class="step-link">contact us directly</a>.
+              </p>
+            </div>
+
+            <!-- ─── Step 2: Date ─── -->
+            <div class="step-panel" id="step-2" data-step="2" hidden>
+              <h3 class="step-title">Choose a date</h3>
+              <div class="field">
+                <label for="res-date" class="field-label">Reservation Date</label>
+                <input
+                  type="date"
+                  id="res-date"
+                  name="res-date"
+                  class="field-input"
+                  required
+                  aria-describedby="res-date-error"
+                />
+                <span class="field-error" id="res-date-error" aria-live="polite"></span>
+              </div>
+              <p class="step-hint">Available Tuesday through Sunday, up to 90 days in advance.</p>
+            </div>
+
+            <!-- ─── Step 3: Time Slot ─── -->
+            <div class="step-panel" id="step-3" data-step="3" hidden>
+              <h3 class="step-title">Select a time</h3>
+              <div
+                id="time-slots"
+                class="time-slots"
+                role="group"
+                aria-label="Available time slots"
+              >
+                <!-- Populated by reservation.js -->
+              </div>
+            </div>
+
+            <!-- ─── Step 4: Contact Details ─── -->
+            <div class="step-panel" id="step-4" data-step="4" hidden>
+              <h3 class="step-title">Your details</h3>
+              <div class="field">
+                <label for="res-name" class="field-label">
+                  Full Name
+                  <span class="field-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="res-name"
+                  name="res-name"
+                  class="field-input"
+                  autocomplete="name"
+                  required
+                  aria-describedby="res-name-error"
+                  aria-required="true"
+                />
+                <span class="field-error" id="res-name-error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="res-email" class="field-label">
+                  Email Address
+                  <span class="field-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="res-email"
+                  name="res-email"
+                  class="field-input"
+                  autocomplete="email"
+                  required
+                  aria-describedby="res-email-error"
+                  aria-required="true"
+                />
+                <span class="field-error" id="res-email-error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="res-requests" class="field-label">
+                  Special Requests
+                  <span class="field-optional">(optional)</span>
+                </label>
+                <textarea
+                  id="res-requests"
+                  name="res-requests"
+                  class="field-input field-textarea"
+                  rows="4"
+                  placeholder="Dietary requirements, celebrations, accessibility needs…"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- ─── Step 5: Confirmation ─── -->
+            <div class="step-panel" id="step-5" data-step="5" hidden>
+              <div class="confirmation" role="status">
+                <div class="confirmation-icon" aria-hidden="true">
+                  <i class="ph-thin ph-check-circle"></i>
+                </div>
+                <h3 class="confirmation-title">Reservation Confirmed</h3>
+                <p class="confirmation-sub">A confirmation has been sent to your email address.</p>
+                <div class="confirmation-card" id="confirmation-card">
+                  <!-- Populated by reservation.js -->
+                </div>
+                <button type="button" class="btn btn-ghost btn-print" id="print-btn">
+                  <i class="ph-thin ph-printer" aria-hidden="true"></i>
+                  Print Confirmation
+                </button>
+              </div>
+            </div>
+
+            <!-- Step navigation -->
+            <div class="step-nav" id="step-nav">
+              <button type="button" class="btn btn-ghost" id="btn-back" hidden>
+                <i class="ph-thin ph-arrow-left" aria-hidden="true"></i>
+                Back
+              </button>
+              <button type="button" class="btn btn-primary" id="btn-next">
+                Next
+                <i class="ph-thin ph-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <!-- Submit error banner -->
+            <div class="submit-error" id="submit-error" hidden role="alert">
+              <i class="ph-thin ph-warning" aria-hidden="true"></i>
+              <span>Something went wrong. Please try again.</span>
+              <button type="button" class="btn btn-ghost btn-sm" id="btn-retry">Retry</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ INFO -->
+      <section id="info" class="info-section" aria-labelledby="info-heading">
+        <div class="section-inner info-inner">
+          <div class="info-block">
+            <h2 id="info-heading" class="info-block-title">
+              <i class="ph-thin ph-clock" aria-hidden="true"></i>
+              Hours
+            </h2>
+            <dl class="hours-list">
+              <div class="hours-row">
+                <dt>Tuesday – Thursday</dt>
+                <dd>18:00 – 22:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Friday – Saturday</dt>
+                <dd>17:30 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Sunday</dt>
+                <dd>17:30 – 21:30</dd>
+              </div>
+              <div class="hours-row hours-row--closed">
+                <dt>Monday</dt>
+                <dd>Closed</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-block-title">
+              <i class="ph-thin ph-map-pin" aria-hidden="true"></i>
+              Location
+            </h3>
+            <address class="info-address">
+              14 Aldwych Mews<br />
+              Covent Garden<br />
+              London, WC2E 8LD
+            </address>
+            <p class="info-note">Nearest station: Temple (District &amp; Circle line)</p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-block-title">
+              <i class="ph-thin ph-envelope" aria-hidden="true"></i>
+              Contact
+            </h3>
+            <p class="info-contact-line">
+              <a href="tel:+442071234567" class="info-link">+44 (0)20 7123 4567</a>
+            </p>
+            <p class="info-contact-line">
+              <a href="mailto:reservations@carta.restaurant" class="info-link">
+                reservations@carta.restaurant
+              </a>
+            </p>
+            <p class="info-note">For groups of 13 or more, please call or email directly.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <span class="footer-wordmark">Carta</span>
+        <p class="footer-copy">© 2026 Carta Restaurant. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#menu" class="footer-nav-link">Menu</a>
+          <a href="#reservations" class="footer-nav-link">Reserve</a>
+          <a href="#info" class="footer-nav-link">Visit</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Scripts (defer preserves load order) -->
+    <script src="js/data.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/reservation.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

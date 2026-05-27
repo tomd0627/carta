@@ -143,11 +143,11 @@ address {
 }
 
 .icon {
+  block-size: 1em;
   display: inline-block;
   fill: currentcolor;
-  height: 1em;
+  inline-size: 1em;
   vertical-align: -0.125em;
-  width: 1em;
 }
 
 /* ─── Focus indicators ───────────────────────────────────────────────── */

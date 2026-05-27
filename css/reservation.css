@@ -482,7 +482,7 @@
   display: none;
 }
 
-.submit-error i {
+.submit-error .icon {
   flex-shrink: 0;
   font-size: 1.25rem;
 }

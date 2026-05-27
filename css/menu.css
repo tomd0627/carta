@@ -229,7 +229,6 @@
   margin-block-start: var(--space-sm);
   max-block-size: 2.8em;
   overflow: hidden;
-  transition: max-block-size var(--t-slow);
 }
 
 .menu-card:hover .menu-card-desc,

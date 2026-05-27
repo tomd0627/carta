@@ -118,9 +118,10 @@
 
     if (state.step === 4) {
       btnNext.innerHTML =
-        'Confirm Reservation <i class="ph-thin ph-arrow-right" aria-hidden="true"></i>';
+        'Confirm Reservation <svg class="icon" aria-hidden="true"><use href="#arrow-right"></use></svg>';
     } else {
-      btnNext.innerHTML = 'Next <i class="ph-thin ph-arrow-right" aria-hidden="true"></i>';
+      btnNext.innerHTML =
+        'Next <svg class="icon" aria-hidden="true"><use href="#arrow-right"></use></svg>';
     }
   }
 
@@ -227,7 +228,7 @@
       icon = document.createElement('div');
       icon.className = 'slots-empty-icon';
       icon.setAttribute('aria-hidden', 'true');
-      icon.innerHTML = '<i class="ph-thin ph-calendar-x"></i>';
+      icon.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#calendar-x"></use></svg>';
 
       msgEl = document.createElement('p');
       msgEl.className = 'slots-empty-msg';
@@ -384,7 +385,7 @@
       if (btnNext) {
         btnNext.disabled = false;
         btnNext.innerHTML =
-          'Confirm Reservation <i class="ph-thin ph-arrow-right" aria-hidden="true"></i>';
+          'Confirm Reservation <svg class="icon" aria-hidden="true"><use href="#arrow-right"></use></svg>';
       }
       onSuccess();
     }, 700);

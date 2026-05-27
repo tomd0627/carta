@@ -137,6 +137,19 @@ address {
   display: none !important;
 }
 
+/* ─── SVG icon system ────────────────────────────────────────────────── */
+.icon-sprite {
+  display: none;
+}
+
+.icon {
+  display: inline-block;
+  fill: currentcolor;
+  height: 1em;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+
 /* ─── Focus indicators ───────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--c-accent);
@@ -422,7 +435,7 @@ address {
   margin-block-end: var(--space-lg);
 }
 
-.info-block-title i {
+.info-block-title .icon {
   color: var(--c-accent);
   font-size: 1.4rem;
 }
